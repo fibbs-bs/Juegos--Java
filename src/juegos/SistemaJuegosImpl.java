@@ -5,6 +5,8 @@
  */
 package juegos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jhona
@@ -203,7 +205,7 @@ public class SistemaJuegosImpl implements SistemaJuegos{
     }
 
     @Override
-    public void jugarLaConsentida() {
+    public void iniciarLaConsentida() {
         try {
             int mediana = jugadores.getCant()/2;
             JugadorConsentida jugadorConsentidoA = new JugadorConsentida(1000);
@@ -215,7 +217,7 @@ public class SistemaJuegosImpl implements SistemaJuegos{
             consentida.setJugadorA(jugadorConsentidoA);
             consentida.setJugadorB(jugadorConsentidoB);
         } catch (Exception e) {
-            throw new NullPointerException("Existen algún error en el sistema!");
+            throw new NullPointerException("'La Consentida' ha fallado en su iniciación!");
         }
         
     }
