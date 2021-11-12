@@ -13,7 +13,7 @@ public class Partida {
     private Juego juego;
     private Jugador jugador;
     private int puntaje;
-    
+    //Hola que tal
     public Partida(int puntaje){
         this.puntaje = puntaje;
         juego = null;

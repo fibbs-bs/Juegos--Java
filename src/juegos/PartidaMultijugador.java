@@ -23,6 +23,7 @@ public class PartidaMultijugador {
     }
 
     public Juego getJuego() {
+        //Hola que tal comoo estamo jaja
         return juego;
     }
 
