@@ -76,9 +76,34 @@ public class Main {
         System.out.println("---------------------------------------");
         System.out.println(sys.ordenamientoJuegos());
         System.out.println("---------------------------------------");
-        sys.jugarMultijugador();
-        System.out.println("-------Jugador ganador Multi    -------");
-        System.out.println(sys.obtenerGanadorPartidaMultijugador());
+        try {
+            sys.jugarMultijugador();
+            System.out.println("-------Jugador ganador Multi    -------");
+            System.out.println(sys.obtenerGanadorPartidaMultijugador());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("-------La Consentida ------------------");
+        try {
+            sys.iniciarLaConsentida();
+            Scanner scan = new Scanner(System.in);
+            System.out.println("JugadorA! ingresa tu valor: ");
+            int valorA = Integer.parseInt(scan.nextLine()) ;
+            System.out.println("JugadorB! ingresa tu valor: ");
+            int valorB = Integer.parseInt(scan.nextLine()) ;
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Iteración de 'La Consentida' N°"+(i+1));
+                System.out.println(sys.jugarLaConsentida(valorA, valorB));
+                System.out.println("JugadorA! ingresa tu valor: ");
+                valorA = Integer.parseInt(scan.nextLine()) ;
+                System.out.println("JugadorB! ingresa tu valor: ");
+                valorB = Integer.parseInt(scan.nextLine()) ;
+            }
+            System.out.println(sys.terminarLaConsentida());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
     
     

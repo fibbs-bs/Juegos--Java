@@ -221,5 +221,64 @@ public class SistemaJuegosImpl implements SistemaJuegos{
         }
         
     }
+
+    @Override
+    public String jugarLaConsentida(int A, int B) {
+        String text = "";
+        JugadorConsentida jA = consentida.getJugadorA();
+        JugadorConsentida jB = consentida.getJugadorB();
+        if (A>B){
+            jA.setPuntos(jA.getPuntos()+10);
+            text+="El jugador A ha ganado 10 puntos!\n";
+        }
+        else{
+            jB.setPuntos(jB.getPuntos()+10);
+            text+="El jugador B ha ganado 10 puntos!\n";
+        }
+        if (A==B){
+            jA.setPuntos(jA.getPuntos()-40);
+            text+="El jugador A ha perdido 40 puntos!\n";
+            jB.setPuntos(jB.getPuntos()+20);
+            text+="El jugador B ha ganado 20 puntos!\n";
+        }
+        if (A==(2*B)){
+            jA.setPuntos(jA.getPuntos()+10);
+            text+="El jugador A ha ganado 10 puntos!\n";
+            jB.setPuntos(jB.getPuntos()-10);
+            text+="El jugador B ha perdido 10 puntos!\n";
+        }
+        if (B==(2*A)){
+            jA.setPuntos(jA.getPuntos()-10);
+            text+="El jugador A ha perdido 10 puntos!\n";
+            jB.setPuntos(jB.getPuntos()+10);
+            text+="El jugador B ha ganado 10 puntos!\n";
+        }
+        return text;
+    }
+
+    @Override
+    public String terminarLaConsentida() {
+        JugadorConsentida jA = consentida.getJugadorA();
+        JugadorConsentida jB = consentida.getJugadorB();
+        String text = "Puntaje del Jugador A ("+jA.getJugador().getNombreUsuario()+"): "+jA.getPuntos()+" puntos.\n";
+        text += "Puntaje del Jugador B ("+jB.getJugador().getNombreUsuario()+"): "+jB.getPuntos()+" puntos.\n";
+        jA.getJugador().setFichas(jA.getJugador().getFichas()+jA.getPuntos());
+        jB.getJugador().setFichas(jB.getJugador().getFichas()+jB.getPuntos());
+        text += "Las fichas fueron actualizadas y quedarón así:\n";
+        text += "\tJugador A ("+jA.getJugador().getNombreUsuario()+"): "+jA.getJugador().getFichas()+"\n";
+        text += "\tJugador B ("+jB.getJugador().getNombreUsuario()+"): "+jB.getJugador().getFichas()+"\n";
+        if (jA.getJugador().getFichas()<0){
+            if (jugadores.eliminar(jA.getJugador().getNombreUsuario())){
+                text+=" El jugador A ("+jA.getJugador().getNombreUsuario()+") fue eliminado!";
+            }
+        }
+        if (jB.getJugador().getFichas()<0){
+            if (jugadores.eliminar(jB.getJugador().getNombreUsuario())){
+                text+=" El jugador B ("+jB.getJugador().getNombreUsuario()+") fue eliminado!";
+            }
+        }
+        return text;
+    }
     
 }
+

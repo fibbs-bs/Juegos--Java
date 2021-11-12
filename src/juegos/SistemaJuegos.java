@@ -35,5 +35,7 @@ public interface SistemaJuegos {
     public String ordenamientoJuegos();
     public void jugarMultijugador();
     public String obtenerGanadorPartidaMultijugador();
-    public void jugarLaConsentida();
+    public void iniciarLaConsentida();
+    public String jugarLaConsentida(int A,int B);
+    public String terminarLaConsentida();
 }

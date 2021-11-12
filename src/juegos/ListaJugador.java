@@ -54,4 +54,24 @@ public class ListaJugador {
             }
         }
     }
+    
+    public boolean eliminar(String text){
+        int i = 0;
+        while(i < count && !list[i].getNombreUsuario().equals(text)) {
+            i++;
+        }
+        
+        if(i == count) {
+            //No esta la partida en la lista
+            return false;
+        }
+        else {
+            //Corrimiento
+            for(int k = i; k < count-1; k++) {
+                list[k]=list[k+1];
+            }
+            count--;
+            return true;
+        }
+    }
 }
