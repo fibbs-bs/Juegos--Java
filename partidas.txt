@@ -1,0 +1,42 @@
+AlbertoDestroy,Mortal Kombat,41
+SumoMano94,Mega Man X,65
+ElOtaku2,Frogger,11
+LuciaHil34,Final Fight,20
+Nekroso23,Pac-Man,70
+AlbertoDestroy,Mega Man X,42
+SumoMano94,Mortal Kombat,21
+Tanjiro99,Final Fight,14
+AlbertoDestroy,Pac-Man,6
+SumoMano94,Frogger,99
+AlbertoDestroy,Mega Man X,33
+ElOtaku2,Pac-Man,8
+ElOtaku2,Frogger,58
+ElOtaku2,Commando,17
+SumoMano94,Kaboom,89
+LuciaHil34,Mega Man X,43
+Nekroso23,Mega Man X,51
+Nekroso23,Mega Man X,100
+Nekroso23,Mega Man X,10
+SumoMano94,Berzek,58
+LuciaHil34,King of fighters,13
+Tanjiro99,Commando,43
+Tanjiro99,Mega Man X,76
+Nekroso23,Battle City,73
+Nekroso23,Micro Machines,86
+Nekroso23,Contra,45
+Tanjiro99,Contra,78
+Nekroso23,Frogger,70
+ElOtaku2,Mega Man X,72
+Tanjiro99,Final Fight,38
+SumoMano94,Contra,36
+LuciaHil34,Kung Fu Remix,29
+SumoMano94,Mega Man X,55
+Tanjiro99,Kung Fu Remix,27
+ElOtaku2,Berzek,68
+Tanjiro99,Commando,23
+SumoMano94,Mortal Kombat,90
+Nekroso23,Pac-Man,59
+SumoMano94,Final Fight,18
+SumoMano94,King of fighters,76
+Tanjiro99,King of fighters,64
+ElOtaku2,Kaboom,88
