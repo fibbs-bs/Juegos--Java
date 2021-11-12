@@ -15,12 +15,14 @@ public class SistemaJuegosImpl implements SistemaJuegos{
     private ListaJugador jugadores;
     private ListaPartidas partidas;
     private PartidaMultijugador multi;
+    private LaConsentida consentida;
     
     public SistemaJuegosImpl(){
         juegos = new ListaJuegos(1000);
         jugadores = new ListaJugador(1000);
         partidas = new ListaPartidas(1000);
         multi = new PartidaMultijugador();
+        consentida = new LaConsentida();
     }
     
     @Override
@@ -198,6 +200,24 @@ public class SistemaJuegosImpl implements SistemaJuegos{
     public String obtenerGanadorPartidaMultijugador() {
         Jugador j = multi.getGanador();
         return "Nombre:"+j.getNombreUsuario()+", Veces jugado:"+j.getVecesJugadas()+", Fichas: "+j.getFichas();
+    }
+
+    @Override
+    public void jugarLaConsentida() {
+        try {
+            int mediana = jugadores.getCant()/2;
+            JugadorConsentida jugadorConsentidoA = new JugadorConsentida(1000);
+            Jugador jugadorA = jugadores.getJugadorI(mediana); //Este será el jugador en la mediana del sistema!
+            jugadorConsentidoA.setJugador(jugadorA);
+            JugadorConsentida jugadorConsentidoB = new JugadorConsentida(1000);
+            Jugador jugadorB = jugadores.getJugadorI(1); //Este será el segundo jugador con mas partidas del sistema!
+            jugadorConsentidoB.setJugador(jugadorB);
+            consentida.setJugadorA(jugadorConsentidoA);
+            consentida.setJugadorB(jugadorConsentidoB);
+        } catch (Exception e) {
+            throw new NullPointerException("Existen algún error en el sistema!");
+        }
+        
     }
     
 }

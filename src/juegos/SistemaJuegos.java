@@ -35,4 +35,5 @@ public interface SistemaJuegos {
     public String ordenamientoJuegos();
     public void jugarMultijugador();
     public String obtenerGanadorPartidaMultijugador();
+    public void jugarLaConsentida();
 }
