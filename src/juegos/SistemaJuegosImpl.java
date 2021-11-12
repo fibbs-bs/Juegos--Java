@@ -157,7 +157,7 @@ public class SistemaJuegosImpl implements SistemaJuegos{
             Juego juego = juegos.getJuegoI(juegos.getCant()-1);
             multi.setJuego(juego);
             multi.setJugadorA(masJugadas);
-            multi.setJugadorA(segundoMenosJugadas);
+            multi.setJugadorB(segundoMenosJugadas);
             Partida pMasJugadas =masJugadas.getPartidas().buscarPartida(masJugadas.getNombreUsuario(), juego.getNombre());
             Partida pSegundoMenosJugada = segundoMenosJugadas.getPartidas().buscarPartida(segundoMenosJugadas.getNombreUsuario(),juego.getNombre());
             if (pMasJugadas==null || pSegundoMenosJugada==null){
@@ -192,6 +192,12 @@ public class SistemaJuegosImpl implements SistemaJuegos{
             text+="\n";
         }
         return text;
+    }
+
+    @Override
+    public String obtenerGanadorPartidaMultijugador() {
+        Jugador j = multi.getGanador();
+        return "Nombre:"+j.getNombreUsuario()+", Veces jugado:"+j.getVecesJugadas()+", Fichas: "+j.getFichas();
     }
     
 }

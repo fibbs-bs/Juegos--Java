@@ -75,6 +75,10 @@ public class Main {
         System.out.println(sys.ordenamientoPartidas());
         System.out.println("---------------------------------------");
         System.out.println(sys.ordenamientoJuegos());
+        System.out.println("---------------------------------------");
+        sys.jugarMultijugador();
+        System.out.println("-------Jugador ganador Multi    -------");
+        System.out.println(sys.obtenerGanadorPartidaMultijugador());
     }
     
     
